@@ -202,9 +202,9 @@ box-shadow: 1px 1px 20px 1px grey;}
 	
 	<div class="tab">
 		<button class="tablinks tab4-b" onclick="openTab(event, 'tab4-wrapper')">tab 4</button>
-				<button class="tablinks tab3-b" onclick="openTab(event, 'tab3-wrapper')">tab 3</button>
-				<button class="tablinks tab2-b" onclick="openTab(event, 'tab2-wrapper')">tab 2</button>
-			<button class="tablinks tab1-b" onclick="openTab(event, 'tab1-wrapper')" id="defaultOpen">tab 1</button>
+		<button class="tablinks tab3-b" onclick="openTab(event, 'tab3-wrapper')">tab 3</button>
+		<button class="tablinks tab2-b" onclick="openTab(event, 'tab2-wrapper')">tab 2</button>
+		<button class="tablinks tab1-b" onclick="openTab(event, 'tab1-wrapper')" id="defaultOpen">tab 1</button>
 	</div>
 	
 	<div class="tab2">
@@ -221,9 +221,9 @@ box-shadow: 1px 1px 20px 1px grey;}
 		<h1>F2U notebook layout</h1>
 		by <a href="https://doqmeat.neocities.org/" target="_blank">doqmeat</a> / <a href="">download code</a>
 		
-				<p><mark>credit is not required but a link back to my website is very appreciated!</mark></p>
+		<p><mark>credit is not required but a link back to my website is very appreciated!</mark></p>
 		
-			<p>heavily encouraged to edit and customize to your liking. there's notes in the code in case you need some pointers :)</p>
+		<p>heavily encouraged to edit and customize to your liking. there's notes in the code in case you need some pointers :)</p>
 		
 		<p>removing or adding tabs / pages shouldn't be much of a hassle if you follow the template in the code!</p>
 		
@@ -235,7 +235,7 @@ box-shadow: 1px 1px 20px 1px grey;}
 		<div id="tab1-p" class="paper right">
 			<p><img src="https://doqmeat.neocities.org/!g/collection/cat-memes/computercat.jpg" width="40%" align="left" style="margin:10px;">Mouser turkish angora siberian mouser. Puma kitty, cornish rex so panther. Donskoy burmese bengal malkin panther. Savannah tiger havana brown yet bobcat norwegian forest. Ocicat singapura yet sphynx, but devonshire rex tomcat. Norwegian forest balinese grimalkin mouser. Munchkin bengal, but bengal american shorthair. Burmese maine coon malkin or cornish rex or birman but maine coon, but birman. Panther puma thai.</p>
 			
-						<p><img src="https://doqmeat.neocities.org/!g/collection/cat-memes/creatureofjoy.jpg" width="40%" align="right" style="margin:10px;">Mouser turkish angora siberian mouser. Puma kitty, cornish rex so panther. Donskoy burmese bengal malkin panther. Savannah devonshire rex yet egyptian mau norwegian forest singapura yet lion but ragdoll. American shorthair ragdoll so tom so persian ocicat and puma for mouser. Scottish fold norwegian forest. Savannah tiger havana brown yet bobcat norwegian forest. Ocicat singapura yet sphynx, but devonshire rex tomcat. Norwegian forest balinese grimalkin mouser. Munchkin bengal, but bengal american shorthair. Burmese maine coon malkin or cornish rex or birman but maine coon, but birman. Panther puma thai.</p>
+			<p><img src="https://doqmeat.neocities.org/!g/collection/cat-memes/creatureofjoy.jpg" width="40%" align="right" style="margin:10px;">Mouser turkish angora siberian mouser. Puma kitty, cornish rex so panther. Donskoy burmese bengal malkin panther. Savannah devonshire rex yet egyptian mau norwegian forest singapura yet lion but ragdoll. American shorthair ragdoll so tom so persian ocicat and puma for mouser. Scottish fold norwegian forest. Savannah tiger havana brown yet bobcat norwegian forest. Ocicat singapura yet sphynx, but devonshire rex tomcat. Norwegian forest balinese grimalkin mouser. Munchkin bengal, but bengal american shorthair. Burmese maine coon malkin or cornish rex or birman but maine coon, but birman. Panther puma thai.</p>
 	<!-- TAB 1 right paper end div -->
 	</div> 
 <!-- 	TAB 1 wrapper end div -->
