@@ -5,4 +5,6 @@ live preview and descriptions of the templates can be found on <a href="https://
 ## rules
 - can be edited to your hearts content!
 - can be used for any site. examples: neocities, tumblr.
-- <b>credit is not mandatory</b> but a link back to my <a href="https://doqmeat.neocities.org/" target="_blank">website</a> is very appreciated
+- <b>credit is not mandatory</b> but a link back to my <a href="https://doqmeat.neocities.org/" target="_blank">website</a> is very appreciated.
+
+  [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
