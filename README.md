@@ -1,7 +1,5 @@
 # F2U templates
-coded by doqmeat. 
-
-live preview and descriptions of the templates can be found on <a href="https://doqmeat.neocities.org/notebook/F2U/codes" target="_blank">my site</a>
+- live preview and descriptions of the templates can be found on <a href="https://doqmeat.neocities.org/notebook/F2U/codes" target="_blank">my site</a>
 
 ## rules
 - can be edited and used for your own site to your hearts content!
