@@ -11,12 +11,14 @@ feel free to contact me for any questions! -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TITLE</title>
+	<title>NOTEBOOK</title>
 	<link rel="icon" type="image/x-icon" href="IMG-URL-FOR-FAVICON">
 	<style>
 		html {
 			/* feel free to delete this if you just want the normal cursor! */
 			cursor: cell;
+			scrollbar-color: #c5dca0 #add8e6;
+			/*			scrollbar for firefox users*/
 		}
 
 		body {
@@ -27,7 +29,7 @@ feel free to contact me for any questions! -->
 			line-height: 25px;
 			word-spacing: 4px;
 			font-family: ms pgothic, arial;
-			/* ms pgothic is not compatible with safari */
+			/* ms pgothic is not compatible with safari or mobile devices*/
 			color: black;
 		}
 
@@ -89,6 +91,7 @@ feel free to contact me for any questions! -->
 		}
 
 		.left-in {
+			/*			the main purpose of this class if so the scrollbar of left pages arent obscured by the bind spiral */
 			padding: 15px 10px 15px 25px;
 			height: 100%;
 			margin-right: 15px;
@@ -103,7 +106,7 @@ feel free to contact me for any questions! -->
 			overflow: auto;
 		}
 
-		/* you can also customize the look of SPECIFIC TAB pages. take TAB 2 for example: */
+		/* you can also customize the look of SPECIFIC pages. take TAB 2 for example: */
 
 		#tab2-p {
 			font-family: consolas;
@@ -186,18 +189,13 @@ feel free to contact me for any questions! -->
 			cursor: grab;
 		}
 
-		/* selected TAB effect */
-		.tab button.active,
-		.tab2 button.active {
+		/* selected TAB effect aka when its focused */
+		.tab button:focus,
+		.tab2 button:focus {
 			top: 0px;
 			cursor: -webkit-grabbing;
 			cursor: grabbing;
 			box-shadow: 1px 1px 20px 1px grey;
-		}
-
-		/* so pages stay hidden */
-		.tabcontent {
-			display: none;
 		}
 
 		/* custom scrollbar for chrome users, firefox users cant see this */
@@ -232,17 +230,17 @@ feel free to contact me for any questions! -->
 	<div id="wrapper-index">
 
 		<div class="tab">
-			<button class="tablinks tab4-b" onclick="openTab(event, 'tab4-wrapper')">tab 4</button>
-			<button class="tablinks tab3-b" onclick="openTab(event, 'tab3-wrapper')">tab 3</button>
-			<button class="tablinks tab2-b" onclick="openTab(event, 'tab2-wrapper')">tab 2</button>
-			<button class="tablinks tab1-b" onclick="openTab(event, 'tab1-wrapper')" id="defaultOpen">tab 1</button> <!-- 	id="defaultOpen" chooses which tab the notebook will have open when reloaded -->
+			<button class="tablinks tab4-b" onclick="openTab('tab4-wrapper')">tab 4</button>
+			<button class="tablinks tab3-b" onclick="openTab('tab3-wrapper')">tab 3</button>
+			<button class="tablinks tab2-b" onclick="openTab('tab2-wrapper')">tab 2</button>
+			<button class="tablinks tab1-b" onclick="openTab('tab1-wrapper')" id="defaultOpen">tab 1</button> <!-- 	id="defaultOpen" chooses which tab the notebook will have open when page is loaded -->
 		</div>
 
 		<div class="tab2">
-			<button class="tablinks tab5-b" onclick="openTab(event, 'tab5-wrapper')">tab 5</button>
-			<button class="tablinks tab6-b" onclick="openTab(event, 'tab6-wrapper')">tab 6</button>
-			<button class="tablinks tab7-b" onclick="openTab(event, 'tab7-wrapper')">tab 7</button>
-			<button class="tablinks tab8-b" onclick="openTab(event, 'tab8-wrapper')">tab 8</button>
+			<button class="tablinks tab5-b" onclick="openTab('tab5-wrapper')">tab 5</button>
+			<button class="tablinks tab6-b" onclick="openTab('tab6-wrapper')">tab 6</button>
+			<button class="tablinks tab7-b" onclick="openTab('tab7-wrapper')">tab 7</button>
+			<button class="tablinks tab8-b" onclick="openTab('tab8-wrapper')">tab 8</button>
 		</div>
 
 		<!-- 	TAB 1 wrapper -->
@@ -361,7 +359,7 @@ feel free to contact me for any questions! -->
 		</div>
 
 
-		<!-- TEMPLATE for new set of TAB pages
+		<!-- TEMPLATE for new set of TAB pages that you can copypaste
 
 	<div id="tab[num]-wrapper" class="tabcontent">
 	<div id="tab[num]-p" class="paper left">
@@ -381,21 +379,16 @@ feel free to contact me for any questions! -->
 
 
 	<script>
-		function openTab(evt, tabName) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
+		function openTab(tabName) {
+			var i;
+			var tabcontent = document.getElementById(tabName);
+			var otherContent = document.getElementsByClassName("tabcontent");
+			var defaultOpen = document.getElementById("defaultOpen");
+			for (i = 0; i < otherContent.length; i++) {
+				otherContent[i].style.display = "none";
 			}
-			tablinks = document.getElementsByClassName("tablinks");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
-			document.getElementById(tabName).style.display = "block";
-			evt.currentTarget.className += " active";
+			tabcontent.style.display = "block";
 		}
-
-		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();
 
 	</script>
