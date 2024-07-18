@@ -1,0 +1,70 @@
+body {
+	background: url(assets/bg.png);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 0px;
+	margin: 0px;
+	color: white;
+}
+
+h1 {
+	margin: 0px;
+	padding: 50px 0 20px 0;
+	font-size: 50px;
+	letter-spacing: 6px;
+}
+
+#cover {
+	margin: auto;
+	margin-top: 90px;
+	border-radius: 20px;
+	text-align: center;
+	position: relative;
+	max-width: 420px;
+	height: 560px;
+	background: #ebbb3f;
+	transition-duration: 3s;
+}
+
+#cover img {
+	width: 70%;
+}
+
+#cover:hover {
+	backface-visibility: visible;
+	animation-name: passport;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes passport {
+	0% {
+		transform: rotate(0deg);
+		margin-top: 90px;
+		opacity: 10;
+	}
+
+	50% {
+		transform: rotate(-90deg);
+		margin-top: 55px;
+		opacity: 10;
+	}
+
+	100% {
+		transform: rotate(-90deg);
+		margin-top: 1px;
+		opacity: 0;
+	}
+}
+
+img,
+h1 {
+	transition-duration: 5s;
+}
+
+#cover:hover img,
+#cover:hover h1 {
+	opacity: 0;
+}
