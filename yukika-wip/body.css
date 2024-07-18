@@ -1,3 +1,16 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--white: #dbecff;
+	--yellow: #ffbd25;
+	--long: 560px;
+	--wide: 420px;
+	--wide2: 840px;
+	--left: 200px;
+}
+
 body {
 	background: url(assets/bg.png);
 	background-attachment: fixed;
@@ -5,34 +18,39 @@ body {
 	background-repeat: no-repeat;
 	padding: 0px;
 	margin: 0px;
-	color: white;
 }
 
 h1 {
+	color: var(--white);
+	text-transform: uppercase;
 	margin: 0px;
-	padding: 50px 0 20px 0;
-	font-size: 50px;
-	letter-spacing: 6px;
+	padding: 70px 0 20px 0;
+	font-size: 38px;
+	letter-spacing: 4px;
+}
+
+#wrapper {
+	transition-duration: 2s;
 }
 
 #cover {
-	margin: auto;
+	left: var(--left);
+	margin-left: 70px;
 	margin-top: 90px;
-	border-radius: 20px;
+	border-radius: 2px 20px 20px 2px;
 	text-align: center;
-	position: relative;
-	max-width: 420px;
-	height: 560px;
+	position: absolute;
+	max-width: var(--wide);
+	height: var(--long);
 	background: #ebbb3f;
-	transition-duration: 3s;
+	z-index: 2;
 }
 
 #cover img {
-	width: 70%;
+	width: 64%;
 }
 
-#cover:hover {
-	backface-visibility: visible;
+.passportANI {
 	animation-name: passport;
 	animation-duration: 2s;
 	animation-fill-mode: forwards;
@@ -43,28 +61,137 @@ h1 {
 	0% {
 		transform: rotate(0deg);
 		margin-top: 90px;
-		opacity: 10;
+		opacity: 1;
 	}
 
 	50% {
 		transform: rotate(-90deg);
-		margin-top: 55px;
-		opacity: 10;
+		margin-top: 10px;
+		opacity: 1;
 	}
 
 	100% {
 		transform: rotate(-90deg);
-		margin-top: 1px;
+		margin-top: 9px;
 		opacity: 0;
+		z-index: -1;
 	}
 }
 
-img,
-h1 {
-	transition-duration: 5s;
+.pageANI {
+	animation-name: pageanimation;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
 }
 
-#cover:hover img,
-#cover:hover h1 {
+@keyframes pageanimation {
+	0% {
+		margin-top: 130px;
+		opacity: 0;
+	}
+
+	50% {
+		margin-top: 80px;
+		opacity: 0;
+	}
+
+	100% {
+		margin-top: 80px;
+		opacity: 1;
+	}
+}
+
+#page-1 {
+	left: var(--left);
+	position: absolute;
+	z-index: 1;
+	margin: auto;
+	margin-top: 50px;
+	background: var(--white);
+	max-width: var(--long);
+	border-radius: 20px;
+	overflow: hidden;
 	opacity: 0;
+}
+
+#page-1 h3 {
+	color: var(--yellow);
+	font-size: 12px;
+}
+
+#page-1 p {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.down {
+	background: white;
+	font-size: 14px;
+	text-transform: uppercase;
+	display: grid;
+	grid-template-areas:
+		"header header header"
+		"img info1 info2"
+		"footer footer footer";
+	grid-template-columns: 40% 35% 25%;
+	grid-template-rows: 10% 80% 10%;
+	border: 2px dashed pink;
+	padding: 30px;
+	height: var(--wide);
+}
+
+.header {
+	grid-area: header;
+	border: 1px solid red;
+}
+
+.header h2 {
+	display: inline-block;
+	margin: 5px;
+	color: var(--yellow);
+}
+
+.portrait {
+	grid-area: img;
+	border: 1px solid red;
+}
+
+.info1 {
+	grid-area: info1;
+	border: 1px solid red;
+}
+
+.info2 {
+	grid-area: info2;
+	border: 1px solid red;
+}
+
+.info1 h3,
+.info2 h3 {
+	text-transform: none;
+}
+
+.footer {
+	grid-area: footer;
+	border: 1px solid red;
+	text-align: center;
+	overflow: hidden;
+	color: var(--yellow);
+}
+
+#s-m-t-tooltip {
+	max-width: 200px;
+	text-align: center;
+	z-index: 9999;
+	margin: 30px 15px 7px 12px;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px dashed black;
+	font-size: 16px;
+	font-style: italic;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px 1px black;
+	color: var(--yellow);
+	background: white;
 }
