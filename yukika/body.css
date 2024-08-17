@@ -19,6 +19,8 @@ body {
 	padding: 0px;
 	margin: 0px;
 	font-family: arial;
+	font-size: 13px;
+	font-weight: bold;
 }
 
 details {
@@ -209,6 +211,7 @@ button.navBtns:hover {
 
 /*this is the tooltip aka the title pop up*/
 #s-m-t-tooltip {
+	font-weight: normal;
 	max-width: 200px;
 	text-align: center;
 	z-index: 9999;

@@ -2,7 +2,7 @@
 
 ## live previews
 - <a href="https://doqmeat.com/notebook/F2U/preview/notebook">notebook</a>
-- <s>yukika soul lady passport</s>
+- <a href="https://doqmeat.github.io/HTML-templates/yukika/">yukika passport</a>
 
 ## rules
 - you are allowed to edit and use code from these templates for your own things to your hearts content.
