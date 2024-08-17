@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>yukika template</title>
 	<link href="body.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
@@ -12,21 +13,38 @@
 
 <body>
 
-	<div id="wrapper">
-		
-		<button id="beforeBtn" class="navBtns">previous page</button>
-		
-		<button id="afterBtn" class="navBtns">next page</button>
+	<div id="hide">
+		<!--	this message will appear if someone tries to view it on a phone-->
+		best viewed on desktop.
+		rotate your phone !!!!!!!
+	</div>
 
-		<div title="click to open passport!" id="cover" onclick="passportOpen()">
-			<h1>passport</h1>
-			<img src="assets/passport-cover.png">
-		</div>
+	<div id="buttons">
+		<!--	the navigation buttons -->
+		<button id="beforeBtn" class="navBtns">button 1</button>
 
+		<button id="afterBtn" class="navBtns">button 2</button>
+	</div>
+
+	<div title="click to open!" id="cover" onclick="passportOpen()">
+		<h1>passport</h1>
+		<img src="assets/passport-cover.png" alt="passport cover">
+	</div>
+	<div id="passport-opened">
 		<div id="page-1" class="page">
 			<div class="up">
-				<p>hello! welcome to my little passport page :3 i created this page as practice of what i've learned so far for HTML, CSS, and JS.</p>
-				<p>you can use this page however you want but i mostly made it as a "carrd" type of intro page for yourself or anything else.</p>
+				<h2>F2U yukika passport template</h2>
+				<p>coded by <a href="https://doqmeat.com">doqmeat.com</a>. can be downloaded via <a href="" target="_blank">github</a> or <a href="" target="_blank">codepen</a>.</p>
+				<p>this template was just me trying to recreate a carrd template i did but with HTML, CSS, and JS. it was a very fun exercise!</p>
+				<p>it is inspired by the passport inclusion in yukika's soul lady album.</p>
+				<details>
+					<summary>pics of the passport</summary>
+					<img src="https://doqmeat.com/music/!g/cds/yukika-soullady-passport.jpg" alt="pic of cover of passport" width="100%">
+					<img src="https://doqmeat.com/music/!g/cds/yukika-soullady-passport-in.jpg" alt="pic" width="100%">
+				</details>
+				<p>you can use this for whatever you want, and edit it to your hearts content!</p>
+				<p>a link back to my site is very appreciate if you use this template!</p>
+
 				<!--			up end div-->
 			</div>
 			<div class="down">
@@ -35,32 +53,50 @@
 					<img src="assets/passport-symbol.png" width="35px" align="right" alt="">
 				</div>
 				<div class="portrait">
-					<img src="assets/me.jpg">
+					<img src="assets/yukika.gif" alt="portrait">
 				</div>
 				<div class="info1">
 					<h3>Name</h3>
-					<p>des</p>
+					<p>yukika</p>
 					<h3>Where</h3>
-					<p>puerto rico</p>
-					<h3>Major</h3>
-					<p>computer science</p>
-					<h3>likes</h3>
-					<p>cats, making web pages, playing video games, jamming</p>
+					<p>south korea</p>
+					<h3>Age</h3>
+					<p>?</p>
+					<h3>Likes</h3>
+					<p>???</p>
 				</div>
 				<div class="info2">
-					<h3>pronouns</h3>
-					<p>she/he</p>
-					<h3>contact me</h3>
-					<p><a href="mailto:doqmeat@gmail.com" target="_blank">e-mail</a></p>
+					<h3>Heading</h3>
+					<p>answer</p>
+					<h3>Heading</h3>
+					<p>answer</p>
+					<h3>Heading</h3>
+					<p>answer
+					</p>
 				</div>
 				<div class="footer">&lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; </div>
 				<!--			down end div-->
 			</div>
 			<!--		page 1 end div-->
 		</div>
+
 		<div id="page-2" class="page">
-			<p>hi this is page 2hhhhhhhhhhhhhhhhh</p>
+			<div class="up">
+				<h3>page 2</h3>
+				<p>Singapura american bobtail, singapura and burmese maine coon and tomcat ocelot. Russian blue kitten so jaguar leopard and siberian. Leopard bobcat or savannah singapura abyssinian . Bombay cougar british shorthair donskoy bobcat or bombay. Lion ragdoll havana brown. British shorthair american bobtail for burmese for kitty cheetah ocicat. Ocelot siamese. British shorthair egyptian mau siamese but cornish rex. Himalayan leopard ocicat but ocicat birman for tabby burmese. Singapura. Havana brown savannah scottish fold but american shorthair american bobtail puma. Puma norwegian forest. Devonshire rex. Malkin lynx, or lion ocelot. Tom mouser turkish angora so devonshire rex american bobtail. American bobtail singapura burmese ocicat scottish fold kitty. Abyssinian kitty, jaguar, for british shorthair, but savannah. </p>
+				<!--					up end div-->
+			</div>
+			<div class="down">
+				<p>Singapura american bobtail, singapura and burmese maine coon and tomcat ocelot. Russian blue kitten so jaguar leopard and siberian. Leopard bobcat or savannah singapura abyssinian . Bombay cougar british shorthair donskoy bobcat or bombay. Lion ragdoll havana brown. British shorthair american bobtail for burmese for kitty cheetah ocicat. Ocelot siamese. British shorthair egyptian mau siamese but cornish rex. Himalayan leopard ocicat but ocicat birman for tabby burmese. Singapura. Havana brown savannah scottish fold but american shorthair american bobtail puma. Puma norwegian forest. Devonshire rex. Malkin lynx, or lion ocelot. Tom mouser turkish angora so devonshire rex american bobtail. American bobtail singapura burmese ocicat scottish fold kitty. Abyssinian kitty, jaguar, for british shorthair, but savannah. </p>
+				<!--					down end div-->
+			</div>
+			<!--			page 2 end div-->
 		</div>
+		<!--		passport opened end div-->
+	</div>
+
+	<div id="spacer">
+
 	</div>
 
 	<script src="script.js"></script>

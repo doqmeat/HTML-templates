@@ -8,7 +8,7 @@
 	--long: 560px;
 	--wide: 420px;
 	--wide2: 840px;
-	--left: 30%;
+	--left: 32.2%;
 }
 
 body {
@@ -18,6 +18,12 @@ body {
 	background-repeat: no-repeat;
 	padding: 0px;
 	margin: 0px;
+	font-family: arial;
+}
+
+details {
+	font-size: 13px;
+	font-weight: bold;
 }
 
 h1 {
@@ -33,14 +39,14 @@ a {
 	color: black;
 }
 
-#wrapper {
-	transition-duration: 2s;
+a:hover {
+	color: var(--yellow);
 }
 
 #cover {
 	left: var(--left);
 	margin-left: 70px;
-	margin-top: 90px;
+	margin-top: 60px;
 	border-radius: 2px 20px 20px 2px;
 	text-align: center;
 	position: absolute;
@@ -48,11 +54,177 @@ a {
 	height: var(--long);
 	background: #ebbb3f;
 	z-index: 2;
+	cursor: grab;
 }
 
 #cover img {
 	width: 64%;
 }
+
+#passport-opened {
+	left: var(--left);
+	position: absolute;
+	z-index: 1;
+	margin-top: 0px;
+	width: var(--long);
+	height: var(--wide2);
+	border-radius: 20px;
+	overflow: hidden;
+	opacity: 0;
+	border: 2px solid var(--yellow);
+}
+
+#page-1 {
+	height: 100%;
+}
+
+#page-2 {
+	height: 100%;
+}
+
+.page {
+	background: white;
+
+}
+
+.page p {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.up {
+	padding: 30px;
+	display: block;
+	height: var(--wide);
+	border-bottom: 2px dashed grey;
+	overflow: auto;
+}
+
+.down {
+	padding: 30px;
+	display: block;
+	height: var(--wide);
+	overflow: auto;
+}
+
+/*navigation buttons that pop up when you open (click) on the passport*/
+
+#buttons {
+	text-align: center;
+	width: 250px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+button.navBtns {
+	display: none;
+	margin: 4px;
+	background: var(--yellow);
+	font-family: inherit;
+	font-style: italic;
+	border-radius: 4px;
+	border: 2px inset var(--yellow);
+}
+
+button.navBtns:hover {
+	background: black;
+	color: var(--yellow);
+	border: 2px outset var(--yellow);
+}
+
+/*a spacer for the end of the page */
+
+#spacer {
+	position: absolute;
+	height: 50px;
+	width: 10px;
+	top: 900px;
+}
+
+/*the look of the page 1 info table*/
+
+#page-1 .down {
+	font-size: 14px;
+	text-transform: uppercase;
+	display: grid;
+	grid-template-areas:
+		"header header header"
+		"img info1 info2"
+		"footer footer footer";
+	grid-template-columns: 40% 35% 25%;
+	grid-template-rows: 10% 80% 10%;
+	overflow: hidden;
+}
+
+#page-1 .down h3 {
+	color: var(--yellow);
+	font-size: 12px;
+}
+
+.header {
+	grid-area: header;
+}
+
+.header h2 {
+	display: inline-block;
+	margin: 5px;
+	color: var(--yellow);
+}
+
+.portrait {
+	grid-area: img;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.portrait img {
+	width: 100%
+}
+
+.info1 {
+	padding: 10px;
+	grid-area: info1;
+	overflow: auto;
+}
+
+.info2 {
+	grid-area: info2;
+	padding: 10px;
+	overflow: auto;
+}
+
+.info1 h3,
+.info2 h3 {
+	text-transform: none;
+}
+
+.footer {
+	grid-area: footer;
+	padding-top: 4px;
+	text-align: center;
+	overflow: hidden;
+	color: var(--yellow);
+}
+
+/*this is the tooltip aka the title pop up*/
+#s-m-t-tooltip {
+	max-width: 200px;
+	text-align: center;
+	z-index: 9999;
+	margin: 30px 15px 7px 12px;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px dashed black;
+	font-size: 16px;
+	font-style: italic;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px 1px black;
+	color: var(--yellow);
+	background: white;
+}
+
+/*animations*/
 
 .passportANI {
 	animation-name: passport;
@@ -64,7 +236,7 @@ a {
 @keyframes passport {
 	0% {
 		transform: rotate(0deg);
-		margin-top: 90px;
+		margin-top: 60px;
 		opacity: 1;
 	}
 
@@ -104,7 +276,7 @@ a {
 
 	100% {
 		transform: rotate(0deg);
-		margin-top: 90px;
+		margin-top: 60px;
 		opacity: 1;
 
 	}
@@ -134,132 +306,24 @@ a {
 	}
 }
 
-#page-1 {
-	left: var(--left);
-	position: absolute;
-	z-index: 1;
-	margin: auto;
-	margin-top: 0px;
-	background: white;
-	width: var(--long);
-	border-radius: 20px;
-	overflow: hidden;
-	opacity: 0;
-}
+/*to make it somewhat mobile compatible...*/
 
-#page-2 {
-	left: var(--left);
-	position: absolute;
-	z-index: 1;
-	margin: auto;
-	margin-top: 0px;
-	background: var(--white);
-	width: var(--long);
-	height: var(--wide2);
-	border-radius: 20px;
-	overflow: hidden;
-	opacity: 0;
-}
-
-#page-1 h3 {
-	color: var(--yellow);
-	font-size: 12px;
-}
-
-#page-1 p {
-	font-size: 13px;
-	font-weight: bold;
-}
-
-.navBtns {
+#hide {
 	display: none;
-	margin: 4px;
-}
-
-.up {
-	display: block;
-	border: 1px green solid;
-	height: var(--wide);
-	color: red;
-}
-
-.down {
+	padding: 10px;
 	background: white;
-	font-size: 14px;
-	text-transform: uppercase;
-	display: grid;
-	grid-template-areas:
-		"header header header"
-		"img info1 info2"
-		"footer footer footer";
-	grid-template-columns: 40% 35% 25%;
-	grid-template-rows: 10% 80% 10%;
-	border: 2px dashed pink;
-	padding: 30px;
-	height: var(--wide);
+	color: black;
+	width: 200px;
 }
 
-.header {
-	grid-area: header;
-	border: 1px solid red;
+@media only screen and (max-width:920px) {
+	:root {
+		--left: 170px;
+	}
 }
 
-.header h2 {
-	display: inline-block;
-	margin: 5px;
-	color: var(--yellow);
-}
-
-.portrait {
-	grid-area: img;
-	border: 1px solid red;
-	padding: 10px;
-	overflow: hidden;
-}
-
-.portrait img {
-	width: 100%
-}
-
-.info1 {
-	padding: 10px;
-	grid-area: info1;
-	border: 1px solid red;
-	overflow: auto;
-}
-
-.info2 {
-	grid-area: info2;
-	border: 1px solid red;
-	padding: 10px;
-	overflow: auto;
-}
-
-.info1 h3,
-.info2 h3 {
-	text-transform: none;
-}
-
-.footer {
-	grid-area: footer;
-	border: 1px solid red;
-	text-align: center;
-	overflow: hidden;
-	color: var(--yellow);
-}
-
-#s-m-t-tooltip {
-	max-width: 200px;
-	text-align: center;
-	z-index: 9999;
-	margin: 30px 15px 7px 12px;
-	padding: 5px;
-	border-radius: 10px;
-	border: 1px dashed black;
-	font-size: 16px;
-	font-style: italic;
-	letter-spacing: 3px;
-	text-shadow: 1px 1px 1px black;
-	color: var(--yellow);
-	background: white;
+@media only screen and (max-width:600px) {
+	#hide {
+		display: block;
+	}
 }
