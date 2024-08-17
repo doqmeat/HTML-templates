@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- the html, css, and js are all on this page. remember imgs will be broken when copy pasting. download the "assets" folder. -->
+
+<!--live preview @ https://doqmeat.github.io/HTML-templates/yukika/-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>yukika template</title>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	
+	you will have to download these last 2 files in order for the stylized tooltips to work. if you don't care then just delete all this part.
+	
+	<script src="tooltip-jquary.js"></script>
+	<script src="tooltip.js"></script>
+-->
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		:root {
+			--white: #dbecff;
+			--yellow: #ffbd25;
+			--long: 560px;
+			--wide: 420px;
+			--wide2: 840px;
+			--left: 32.2%;
+		}
+
+		body {
+			background: url(assets/bg.png);
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+			padding: 0px;
+			margin: 0px;
+			font-family: arial;
+		}
+
+		details {
+			font-size: 13px;
+			font-weight: bold;
+		}
+
+		h1 {
+			color: var(--white);
+			text-transform: uppercase;
+			margin: 0px;
+			padding: 70px 0 20px 0;
+			font-size: 38px;
+			letter-spacing: 4px;
+		}
+
+		a {
+			color: black;
+		}
+
+		a:hover {
+			color: var(--yellow);
+		}
+
+		#cover {
+			left: var(--left);
+			margin-left: 70px;
+			margin-top: 60px;
+			border-radius: 2px 20px 20px 2px;
+			text-align: center;
+			position: absolute;
+			width: var(--wide);
+			height: var(--long);
+			background: #ebbb3f;
+			z-index: 2;
+			cursor: grab;
+		}
+
+		#cover img {
+			width: 64%;
+		}
+
+		#passport-opened {
+			left: var(--left);
+			position: absolute;
+			z-index: 1;
+			margin-top: 0px;
+			width: var(--long);
+			height: var(--wide2);
+			border-radius: 20px;
+			overflow: hidden;
+			opacity: 0;
+			border: 2px solid var(--yellow);
+		}
+
+		#page-1 {
+			height: 100%;
+		}
+
+		#page-2 {
+			height: 100%;
+		}
+
+		.page {
+			background: white;
+
+		}
+
+		.page p {
+			font-size: 13px;
+			font-weight: bold;
+		}
+
+		.up {
+			padding: 30px;
+			display: block;
+			height: var(--wide);
+			border-bottom: 2px dashed grey;
+			overflow: auto;
+		}
+
+		.down {
+			padding: 30px;
+			display: block;
+			height: var(--wide);
+			overflow: auto;
+		}
+
+		/*navigation buttons that pop up when you open (click) on the passport*/
+
+		#buttons {
+			text-align: center;
+			width: 250px;
+			margin: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		button.navBtns {
+			display: none;
+			margin: 4px;
+			background: var(--yellow);
+			font-family: inherit;
+			font-style: italic;
+			border-radius: 4px;
+			border: 2px inset var(--yellow);
+		}
+
+		button.navBtns:hover {
+			background: black;
+			color: var(--yellow);
+			border: 2px outset var(--yellow);
+		}
+
+		/*a spacer for the end of the page */
+
+		#spacer {
+			position: absolute;
+			height: 50px;
+			width: 10px;
+			top: 900px;
+		}
+
+		/*the look of the page 1 info table*/
+
+		#page-1 .down {
+			font-size: 14px;
+			text-transform: uppercase;
+			display: grid;
+			grid-template-areas:
+				"header header header"
+				"img info1 info2"
+				"footer footer footer";
+			grid-template-columns: 40% 35% 25%;
+			grid-template-rows: 10% 80% 10%;
+			overflow: hidden;
+		}
+
+		#page-1 .down h3 {
+			color: var(--yellow);
+			font-size: 12px;
+		}
+
+		.header {
+			grid-area: header;
+		}
+
+		.header h2 {
+			display: inline-block;
+			margin: 5px;
+			color: var(--yellow);
+		}
+
+		.portrait {
+			grid-area: img;
+			padding: 10px;
+			overflow: hidden;
+		}
+
+		.portrait img {
+			width: 100%
+		}
+
+		.info1 {
+			padding: 10px;
+			grid-area: info1;
+			overflow: auto;
+		}
+
+		.info2 {
+			grid-area: info2;
+			padding: 10px;
+			overflow: auto;
+		}
+
+		.info1 h3,
+		.info2 h3 {
+			text-transform: none;
+		}
+
+		.footer {
+			grid-area: footer;
+			padding-top: 4px;
+			text-align: center;
+			overflow: hidden;
+			color: var(--yellow);
+		}
+
+		/*this is the tooltip aka the title pop up*/
+		#s-m-t-tooltip {
+			max-width: 200px;
+			text-align: center;
+			z-index: 9999;
+			margin: 30px 15px 7px 12px;
+			padding: 5px;
+			border-radius: 10px;
+			border: 1px dashed black;
+			font-size: 16px;
+			font-style: italic;
+			letter-spacing: 3px;
+			text-shadow: 1px 1px 1px black;
+			color: var(--yellow);
+			background: white;
+		}
+
+		/*animations*/
+
+		.passportANI {
+			animation-name: passport;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease;
+		}
+
+		@keyframes passport {
+			0% {
+				transform: rotate(0deg);
+				margin-top: 60px;
+				opacity: 1;
+			}
+
+			50% {
+				transform: rotate(-90deg);
+				margin-top: -20px;
+				opacity: 1;
+			}
+
+			100% {
+				transform: rotate(-90deg);
+				margin-top: -65px;
+				opacity: 0;
+				z-index: -1;
+			}
+		}
+
+		.passportCloseANI {
+			animation-name: passportclose;
+			animation-duration: 1.7s;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease;
+		}
+
+		@keyframes passportclose {
+			0% {
+				transform: rotate(-90deg);
+				margin-top: -65px;
+				opacity: 0.3;
+			}
+
+			50% {
+				transform: rotate(-90deg);
+				margin-top: -20px;
+				opacity: 1;
+			}
+
+			100% {
+				transform: rotate(0deg);
+				margin-top: 60px;
+				opacity: 1;
+
+			}
+		}
+
+		.pageANI {
+			animation-name: pageanimation;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+			animation-timing-function: ease;
+		}
+
+		@keyframes pageanimation {
+			0% {
+				margin-top: 130px;
+				opacity: 0;
+			}
+
+			50% {
+				margin-top: 50px;
+				opacity: 0;
+			}
+
+			100% {
+				margin-top: 0px;
+				opacity: 1;
+			}
+		}
+
+		/*to make it somewhat mobile compatible...*/
+
+		#hide {
+			display: none;
+			padding: 10px;
+			background: white;
+			color: black;
+			width: 200px;
+		}
+
+		@media only screen and (max-width:920px) {
+			:root {
+				--left: 170px;
+			}
+		}
+
+		@media only screen and (max-width:600px) {
+			#hide {
+				display: block;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="hide">
+		<!--	this message will appear if someone tries to view it on a phone-->
+		best viewed on desktop.
+		rotate your phone !!!!!!!
+	</div>
+
+	<div id="buttons">
+		<!--	the navigation buttons -->
+		<button id="beforeBtn" class="navBtns">button 1</button>
+
+		<button id="afterBtn" class="navBtns">button 2</button>
+	</div>
+
+	<div title="click to open!" id="cover" onclick="passportOpen()">
+		<h1>passport</h1>
+		<img src="assets/passport-cover.png" alt="passport cover">
+	</div>
+	<div id="passport-opened">
+		<div id="page-1" class="page">
+			<div class="up">
+				<h2>F2U yukika passport template</h2>
+				<p>coded by <a href="https://doqmeat.com">doqmeat.com</a>. can be downloaded via the "yukika" folder @ <a href="https://github.com/doqmeat/HTML-templates/tree/main/yukika" target="_blank">github</a></p>
+				<p>this template was just me trying to recreate a carrd template i did but with HTML, CSS, and JS. it was a very fun exercise!</p>
+				<p>it is inspired by the passport inclusion in yukika's soul lady album.</p>
+				<details>
+					<summary>pics of the passport</summary>
+					<img src="https://doqmeat.com/music/!g/cds/yukika-soullady-passport.jpg" alt="pic of cover of passport" width="100%">
+					<img src="https://doqmeat.com/music/!g/cds/yukika-soullady-passport-in.jpg" alt="pic" width="100%">
+				</details>
+				<p>you can use this for whatever you want, and edit it to your hearts content!</p>
+				<p>a link back to my site is very appreciate if you use this template!</p>
+
+				<!--			up end div-->
+			</div>
+			<div class="down">
+				<div class="header">
+					<h2>여권 passport </h2>
+					<img src="assets/passport-symbol.png" width="35px" align="right" alt="">
+				</div>
+				<div class="portrait">
+					<img src="assets/yukika.gif" alt="portrait">
+				</div>
+				<div class="info1">
+					<h3>Name</h3>
+					<p>yukika</p>
+					<h3>Where</h3>
+					<p>south korea</p>
+					<h3>Age</h3>
+					<p>?</p>
+					<h3>Likes</h3>
+					<p>???</p>
+				</div>
+				<div class="info2">
+					<h3>Heading</h3>
+					<p>answer</p>
+					<h3>Heading</h3>
+					<p>answer</p>
+					<h3>Heading</h3>
+					<p>answer
+					</p>
+				</div>
+				<div class="footer">&lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; &lsaquo; </div>
+				<!--			down end div-->
+			</div>
+			<!--		page 1 end div-->
+		</div>
+
+		<div id="page-2" class="page">
+			<div class="up">
+				<h3>page 2</h3>
+				<p>Singapura american bobtail, singapura and burmese maine coon and tomcat ocelot. Russian blue kitten so jaguar leopard and siberian. Leopard bobcat or savannah singapura abyssinian . Bombay cougar british shorthair donskoy bobcat or bombay. Lion ragdoll havana brown. British shorthair american bobtail for burmese for kitty cheetah ocicat. Ocelot siamese. British shorthair egyptian mau siamese but cornish rex. Himalayan leopard ocicat but ocicat birman for tabby burmese. Singapura. Havana brown savannah scottish fold but american shorthair american bobtail puma. Puma norwegian forest. Devonshire rex. Malkin lynx, or lion ocelot. Tom mouser turkish angora so devonshire rex american bobtail. American bobtail singapura burmese ocicat scottish fold kitty. Abyssinian kitty, jaguar, for british shorthair, but savannah. </p>
+				<!--					up end div-->
+			</div>
+			<div class="down">
+				<p>Singapura american bobtail, singapura and burmese maine coon and tomcat ocelot. Russian blue kitten so jaguar leopard and siberian. Leopard bobcat or savannah singapura abyssinian . Bombay cougar british shorthair donskoy bobcat or bombay. Lion ragdoll havana brown. British shorthair american bobtail for burmese for kitty cheetah ocicat. Ocelot siamese. British shorthair egyptian mau siamese but cornish rex. Himalayan leopard ocicat but ocicat birman for tabby burmese. Singapura. Havana brown savannah scottish fold but american shorthair american bobtail puma. Puma norwegian forest. Devonshire rex. Malkin lynx, or lion ocelot. Tom mouser turkish angora so devonshire rex american bobtail. American bobtail singapura burmese ocicat scottish fold kitty. Abyssinian kitty, jaguar, for british shorthair, but savannah. </p>
+				<!--					down end div-->
+			</div>
+			<!--			page 2 end div-->
+		</div>
+		<!--		passport opened end div-->
+	</div>
+
+	<div id="spacer">
+
+	</div>
+
+	<script>
+		let passport = document.getElementById("cover");
+		let passportOpened = document.getElementById("passport-opened");
+		let page1 = document.getElementById("page-1");
+		let page2 = document.getElementById("page-2");
+		let btn1 = document.getElementById("beforeBtn");
+		let btn2 = document.getElementById("afterBtn");
+		let otherPages = document.getElementsByClassName("page");
+		let i = 0;
+
+
+		function passportOpen() {
+			btn1.style.display = "inline-block";
+			btn2.style.display = "inline-block";
+			//		pages
+			passportOpened.style.display = "block";
+			page1.style.display = "block";
+			page2.style.display = "none";
+			//		animations
+			passport.className = "passportANI";
+			passportOpened.className = "pageANI";
+			//		buttons
+			btn1.onclick = passportClose;
+			btn1.innerText = "close passport";
+			btn2.onclick = passportPage2;
+			btn2.innerText = "next page";
+		}
+
+		function passportPage1() {
+			page1.style.display = "block";
+			page2.style.display = "none";
+			passportOpened.style.opacity = "1";
+			passportOpened.classList.remove("pageANI");
+			btn1.onclick = passportClose;
+			btn1.innerText = "close passport";
+			btn2.onclick = passportPage2;
+			btn2.innerText = "next page";
+			passport.style.display = "none";
+		}
+
+		function passportPage2() {
+			page1.style.display = "none";
+			page2.style.display = "block";
+			btn1.onclick = passportPage1;
+			btn1.innerText = "previous page";
+			btn2.onclick = passportClose;
+			btn2.innerText = "close passport";
+			passport.style.display = "none";
+		}
+
+		function passportClose() {
+			passport.style.display = "block";
+			passport.className = "passportCloseANI";
+			passportOpened.style.display = "none";
+			btn1.style.display = "none";
+			btn2.style.display = "none";
+		}
+
+	</script>
+</body>
+
+</html>
