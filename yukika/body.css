@@ -22,6 +22,11 @@ body {
 	font-size: 14px;
 }
 
+::selection {
+	background: var(--yellow);
+	color: black;
+}
+
 h1 {
 	color: var(--white);
 	text-transform: uppercase;
@@ -52,6 +57,8 @@ a:hover {
 	background: #ebbb3f;
 	z-index: 2;
 	cursor: grab;
+	box-shadow: 2px 2px 1px white;
+	border: 1px grey solid;
 }
 
 #cover img {
