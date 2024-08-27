@@ -26,9 +26,9 @@
 	}
 
 	function passportPage1() {
+		passportOpened.style.display = "block";
 		page1.style.display = "block";
 		page2.style.display = "none";
-		passportOpened.style.opacity = "1";
 		passportOpened.classList.remove("pageANI");
 		btn1.onclick = passportClose;
 		btn1.innerText = "close passport";
@@ -48,7 +48,7 @@
 	}
 
 	function passportClose() {
-	passport.style.display = "block";
+		passport.style.display = "block";
 		passport.className = "passportCloseANI";
 		passportOpened.style.display = "none";
 		btn1.style.display = "none";
