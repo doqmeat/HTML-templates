@@ -38,7 +38,7 @@ h1 {
 
 a {
 	text-decoration: wavy underline;
-	color: black;
+	color: #0086e4;
 }
 
 a:hover {
@@ -66,6 +66,7 @@ a:hover {
 }
 
 #passport-opened {
+	display: none;
 	left: var(--left);
 	position: absolute;
 	z-index: 1;
@@ -74,7 +75,6 @@ a:hover {
 	height: var(--wide2);
 	border-radius: 20px;
 	overflow: hidden;
-	opacity: 0;
 	border: 2px solid var(--yellow);
 }
 
@@ -307,6 +307,41 @@ button.navBtns:hover {
 
 	100% {
 		margin-top: 0px;
+		opacity: 1;
+	}
+}
+
+/* animation when turning page */
+.pageTurnANI1 {
+	animation-name: pageturnanimation1;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+.pageTurnANI2 {
+	animation-name: pageturnanimation2;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes pageturnanimation1 {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes pageturnanimation2 {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
 		opacity: 1;
 	}
 }
