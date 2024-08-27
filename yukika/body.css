@@ -66,6 +66,7 @@ a:hover {
 }
 
 #passport-opened {
+	background:white;
 	display: none;
 	left: var(--left);
 	position: absolute;
@@ -88,7 +89,6 @@ a:hover {
 
 .page {
 	background: white;
-
 }
 
 #page-1 .down p {

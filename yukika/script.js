@@ -26,6 +26,7 @@
 	}
 
 	function passportPage1() {
+		page1.className = "pageTurnANI1";
 		passportOpened.style.display = "block";
 		page1.style.display = "block";
 		page2.style.display = "none";
@@ -38,6 +39,7 @@
 	}
 
 	function passportPage2() {
+		page2.className = "pageTurnANI2";
 		page1.style.display = "none";
 		page2.style.display = "block";
 		btn1.onclick = passportPage1;
