@@ -11,6 +11,10 @@
 	--left: 32.2%;
 }
 
+html {
+	scrollbar-color: #ffbd25 #dbecff;
+}
+
 body {
 	background: url(assets/bg.png);
 	background-attachment: fixed;
@@ -34,6 +38,12 @@ h1 {
 	padding: 70px 0 20px 0;
 	font-size: 38px;
 	letter-spacing: 4px;
+}
+
+h2,
+h3,
+h4 {
+	color: var(--yellow);
 }
 
 a {
@@ -66,7 +76,7 @@ a:hover {
 }
 
 #passport-opened {
-	background:white;
+	background: white;
 	display: none;
 	left: var(--left);
 	position: absolute;
