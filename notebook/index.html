@@ -195,8 +195,8 @@ feel free to contact me for any questions! -->
 		}
 
 		/* selected TAB effect aka when its focused */
-		.tab button:focus,
-		.tab2 button:focus {
+		.tab button.active,
+		.tab2 button.active {
 			top: 0px;
 			cursor: -webkit-grabbing;
 			cursor: grabbing;
@@ -226,7 +226,6 @@ feel free to contact me for any questions! -->
 			border-radius: 10px;
 			background: transparent;
 		}
-
 	</style>
 </head>
 
@@ -384,16 +383,20 @@ feel free to contact me for any questions! -->
 	<script>
 		function openTab(tabName) {
 			var i;
-			var tabcontent = document.getElementById(tabName);
+			var tab = document.getElementById(tabName);
 			var otherContent = document.getElementsByClassName("tabcontent");
 			var defaultOpen = document.getElementById("defaultOpen");
+			var buttons = document.getElementsByClassName("tablinks");
 			for (i = 0; i < otherContent.length; i++) {
 				otherContent[i].style.display = "none";
 			}
-			tabcontent.style.display = "block";
+			for (i = 0; i < buttons.length; i++) {
+				buttons[i].classList.remove("active");
+			}
+			tab.style.display = "block";
+			event.currentTarget.className += " active";
 		}
-		defaultOpen.click();
-		defaultOpen.focus();
+		document.getElementById("defaultOpen").click();
 
 	</script>
 </body>
